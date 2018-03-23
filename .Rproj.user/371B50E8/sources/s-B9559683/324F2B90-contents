@@ -1,0 +1,33 @@
+---
+title: A new website!
+author: Joseph Scheidt
+date: '2018-03-23'
+slug: a-new-website
+categories: []
+tags: []
+---
+
+##Welcome
+
+Thanks for visiting! I am very happy to start sharing some of my work in a place where someone besides me can actually see and read about it.
+
+##How I Built This Site
+
+Big thanks to the brilliant tutorial written by [Emily Zabor](http://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html).
+
+This site was built using blogdown, and if you are attempting to build a blogdown site you should definitely check out [this amazing book](https://bookdown.org/yihui/blogdown/).
+
+I am currently using the Ghostwriter Hugo theme, hosted [here](https://github.com/jbub/ghostwriter).
+
+I'd like to share a couple of tips, that I wish I had known when I started:
+
+* Definitely make sure all of your software is up to date first. I had spent a few months away from R (mostly working in Java). With many errors and session crashes along the way, I eventually realized I needed to update R, RStudio, Chocolately, Hugo, and git.
+
+* The tutorial linked above isn't super clear about how to organize the source vs. yourname.github.io folders for a blogging site, but the Github Pages section of the blogdown book shows a much clearer diagram. Basically, after building a new site and importing your theme, everything will be in the yourname.github.io folder. You'll want to move everything not in the "public" folder to a "source" folder on the same level as the yourname.github.io folder, and then move everything in the "public" folder up one level so it becomes the yourname.github.io folder.
+
+* Make sure the following line is in your config.toml file and add if not:
+```
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+```
+
+That's all for now. Until next time, may all your data be tidy, and your samples uniformly distributed.
