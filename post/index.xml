@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Joseph Scheidt</copyright>
-    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Number shuffle</title>
+      <link>/2018/03/25/2018-03-25-number-shuffle/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/25/2018-03-25-number-shuffle/</guid>
+      <description>Number Shuffle Fivethirtyeight.com posted a problem in their weekly Riddler article on Friday which I found particularly interesting. It is as follows:
+Imagine taking a number and moving its last digit to the front. For example, 1,234 would become 4,123. What is the smallest positive integer such that when you do this, the result is exactly double the original number? (For bonus points, solve this one without a computer.)
+After some thought, I was able to reason out how to get to the answer.</description>
+    </item>
     
     <item>
       <title>A new website!</title>

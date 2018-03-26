@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Number shuffle &middot; Joseph Scheidt</title>
+        <meta name="description" content="Number Shuffle Fivethirtyeight.com posted a problem in their weekly Riddler article on Friday which I found particularly interesting. It is as follows:
+Imagine taking a number and moving its last digit to the front. For example, 1,234 would become 4,123. What is the smallest positive integer such that when you do this, the result is exactly double the original number? (For bonus points, solve this one without a computer.)
+After some thought, I was able to reason out how to get to the answer.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.37.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Number shuffle">
+<meta property="og:description" content="Number Shuffle Fivethirtyeight.com posted a problem in their weekly Riddler article on Friday which I found particularly interesting. It is as follows:
+Imagine taking a number and moving its last digit to the front. For example, 1,234 would become 4,123. What is the smallest positive integer such that when you do this, the result is exactly double the original number? (For bonus points, solve this one without a computer.)
+After some thought, I was able to reason out how to get to the answer.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2018/03/25/2018-03-25-number-shuffle/">
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Joseph Scheidt" href="/">Joseph Scheidt</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/josephjscheidt">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/josephscheidt">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://linkedin.com/in/josephjscheidt/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:josephjscheidt@gmail.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Contact" href="/page/contact/">Contact</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Number shuffle</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2018-03-25" itemprop="datePublished">Sun, Mar 25, 2018</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://www.linkedin.com/in/josephjscheidt/" itemprop="url" rel="author">Joseph Scheidt</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <div id="number-shuffle" class="section level2">
+<h2>Number Shuffle</h2>
+<p>Fivethirtyeight.com posted a problem in their weekly <a href="https://fivethirtyeight.com/features/can-you-shuffle-numbers-can-you-find-all-the-world-cup-results/">Riddler</a> article on Friday which I found particularly interesting. It is as follows:</p>
+<p>Imagine taking a number and moving its last digit to the front. For example, 1,234 would become 4,123. What is the smallest positive integer such that when you do this, the result is exactly double the original number? (For bonus points, solve this one without a computer.)</p>
+<p>After some thought, I was able to reason out how to get to the answer. We know the solution must end in a digit of one through nine, otherwise you would have a leading zero after shuffling. If you know what digit the solution ends with, you also know what digit the doubled number ends with. For instance, if the solution ends with 2, the doubled number must end with 4. Given that, we also then know the solution must end in 42, so when the 2 digit gets shuffled to the front of the number, the doubled number will end with the four. So the doubled number must end in 42 * 2 = 84, and the solution must end with 842, doubled 684, solution 6842, etc. (Notice that carried ones are ignored until the next digit is calculated.) This leads to a pair of number trees to construct the solution for each possible digit:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Solution</th>
+<th align="right">Double</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">42</td>
+<td align="right">84</td>
+</tr>
+<tr class="odd">
+<td align="right">842</td>
+<td align="right">684</td>
+</tr>
+<tr class="even">
+<td align="right">6842</td>
+<td align="right">3684</td>
+</tr>
+<tr class="odd">
+<td align="right">36842</td>
+<td align="right">73684</td>
+</tr>
+<tr class="even">
+<td align="right">736842</td>
+<td align="right">473684</td>
+</tr>
+<tr class="odd">
+<td align="right">4736842</td>
+<td align="right">9473684</td>
+</tr>
+<tr class="even">
+<td align="right">94736842</td>
+<td align="right">89473684</td>
+</tr>
+<tr class="odd">
+<td align="right">894736842</td>
+<td align="right">789473684</td>
+</tr>
+<tr class="even">
+<td align="right">7894736842</td>
+<td align="right">5789473684</td>
+</tr>
+<tr class="odd">
+<td align="right">57894736842</td>
+<td align="right">15789473684</td>
+</tr>
+<tr class="even">
+<td align="right">157894736842</td>
+<td align="right">315789473684</td>
+</tr>
+<tr class="odd">
+<td align="right">3157894736842</td>
+<td align="right">6315789473684</td>
+</tr>
+<tr class="even">
+<td align="right">63157894736842</td>
+<td align="right">26315789473684</td>
+</tr>
+<tr class="odd">
+<td align="right">263157894736842</td>
+<td align="right">526315789473684</td>
+</tr>
+<tr class="even">
+<td align="right">5263157894736842</td>
+<td align="right">0526315789473684</td>
+</tr>
+<tr class="odd">
+<td align="right">05263157894736842</td>
+<td align="right">10526315789473684</td>
+</tr>
+<tr class="even">
+<td align="right">105263157894736842</td>
+<td align="right">210526315789473684</td>
+</tr>
+</tbody>
+</table>
+<p>You can do this for each possible end digit 1 through 9, and all answers end up being 18 digits long, with the displayed number ending in 2 being the smallest. The only exception is 1, as the number cycles through an unending sequence of numbers without coming to a solution. At 18 digits, the number works if you add a leading zero, which is interesting:</p>
+<p>052,631,578,947,368,421 -&gt; 105,263,157,894,736,842</p>
+<p>I accepted the extra challenge and constructed these number trees by hand, but afterwards, I wrote a program in Java to both check my paper answers and to come at the solution for each ending digit programmatically. Since the BigInteger class in Java takes a String argument in its constructor, it is a natural fit for this problem, which is a mixture of multiplication and String indexing manipulation.</p>
+<p>I’ve posted the program <a href="https://github.com/josephscheidt/blogstuff/blob/master/NumberShuffle.java">here</a> if you’d like to take a look or download and compile/run it yourself. Please feel free to let me know what you think!</p>
+<p>Thanks for reading. Until next time, may all your research be easily reproducible.</p>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Number%20shuffle&url=%2f2018%2f03%2f25%2f2018-03-25-number-shuffle%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f2018%2f03%2f25%2f2018-03-25-number-shuffle%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+        
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Number%20shuffle&url=%2f2018%2f03%2f25%2f2018-03-25-number-shuffle%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Joseph Scheidt" href="/">Joseph Scheidt</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2018 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+
