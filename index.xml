@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Joseph Scheidt</copyright>
-    <lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Mar 2018 02:13:50 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Current projects</title>
+      <link>/project/my-awesome-project/</link>
+      <pubDate>Sun, 25 Mar 2018 02:13:50 +0000</pubDate>
+      
+      <guid>/project/my-awesome-project/</guid>
+      <description>What I&amp;rsquo;m working on With baseball season fast approaching, I am currently working on a linear regression that uses season statistics to predict MVP vote shares for each player. Using the invaluable Lahman database, through the Lahman R package, I intend to build what will hopefully be a decent prediction model, and then use that model to track the state of the MVP race in each baseball league (AL and NL) as the season progresses.</description>
+    </item>
     
     <item>
       <title>Number shuffle</title>
@@ -51,15 +60,6 @@ I am currently using the Ghostwriter Hugo theme, hosted here.</description>
       
       <guid>/page/contact/</guid>
       <description>Contact Please feel free to email, LinkedIn message, or tweet at me for any reason using the information linked above. I&amp;rsquo;ll be excited to hear from you! Unless you are a spam bot phishing for my Facebook account login. Then I will be somewhat less excited.</description>
-    </item>
-    
-    <item>
-      <title>My awesome project</title>
-      <link>/project/my-awesome-project/</link>
-      <pubDate>Tue, 18 Nov 2014 02:13:50 +0000</pubDate>
-      
-      <guid>/project/my-awesome-project/</guid>
-      <description>About project Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem. Praesent et diam sit amet lacus lobortis dictum a id lacus. Quisque hendrerit sit amet turpis eu varius. Ut id lorem ac felis ultrices tincidunt. Pellentesque consequat arcu ac fringilla imperdiet. Phasellus pellentesque, sapien non pulvinar blandit, sapien ante aliquet felis, vel porttitor sapien ante in lacus. Fusce non urna aliquet, malesuada nibh vel, luctus urna. Phasellus ut lacus molestie, varius purus quis, malesuada lorem.</description>
     </item>
     
   </channel>
