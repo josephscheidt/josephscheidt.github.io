@@ -28,6 +28,10 @@
   </url>
   
   <url>
+    <loc>/project/my-awesome-project/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2018-03-25T02:13:50+00:00</lastmod>
     <priority>0</priority>

@@ -21,5 +21,14 @@
       <description>What I&amp;rsquo;m working on With baseball season fast approaching, I am currently working on a linear regression that uses season statistics to predict MVP vote shares for each player. Using the invaluable Lahman database, through the Lahman R package, I intend to build what will hopefully be a decent prediction model, and then use that model to track the state of the MVP race in each baseball league (AL and NL) as the season progresses.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/project/my-awesome-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/my-awesome-project/</guid>
+      <description>What I&amp;#39;m working on window.onload = function() { var imgs = document.getElementsByTagName(&#39;img&#39;), i, img; for (i = 0; i body, td { font-family: sans-serif; background-color: white; font-size: 13px; } body { max-width: 800px; margin: auto; padding: 1em; line-height: 20px; } tt, code, pre { font-family: &#39;DejaVu Sans Mono&#39;, &#39;Droid Sans Mono&#39;, &#39;Lucida Console&#39;, Consolas, Monaco, monospace; } h1 { font-size:2.2em; } h2 { font-size:1.8em; } h3 { font-size:1.4em; } h4 { font-size:1.</description>
+    </item>
+    
   </channel>
 </rss>
